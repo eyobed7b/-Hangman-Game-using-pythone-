@@ -6,12 +6,8 @@ from graphics import *
 
  
 
-# chooseWord()
-#
-# Chooses a word randomly from the list of words taken from the input file
-def chooseWord(infile_name):
-	# infile = open(infile_name, 'r')
-	# wordlist = infile.readlines()
+def chooseWord():
+
 	words = [ 'Eyobed','eyob',' Ephirem','Ethiopia']
 	total_words = len(words)
 	random_num = randint(0, total_words - 1)
@@ -98,7 +94,7 @@ def main(win, infile_name):
 	# 	infile_name = getInfile()
 
 	# Choose a word at random from the acquired word list
-	word, word_len = chooseWord(infile_name)
+	word, word_len = chooseWord()
 
 	# Build the grid of empty spaces, one space for each letter of the chosen word
 	grid = '__'
@@ -115,6 +111,7 @@ def main(win, infile_name):
 		win.setCoords(0, 0, win_width, win_height)
 
 	# Draw the game message area, the ground of the Hangman graphic, and the empty grid
+	
 	win_message = Text(Point(win_width / 2, 70), "Let's play! Guess a letter below to see if it's in the word.")
 	win_message.setStyle('bold')
 	win_message.draw(win)
